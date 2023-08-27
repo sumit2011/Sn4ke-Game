@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    background-color: black;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scoreBox {
+    top: 5px;
+    display: flex;
+    text-align: center;
+    font-size: 39px;
+    font-weight: bold;
+    color: yellowgreen;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Chivo Mono', monospace;
+}
+
+
+
+#board {
+    background: linear-gradient(black, black);
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid greenyellow;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    justify-content: center;
+
+}
+
+.head {
+    background-color: green;
+
+    border-radius: 6px;
+    ;
+}
+
+.snake {
+    background-color: greenyellow;
+
+    border-radius: 6px;
+}
+
+.food {
+    background-color: yellow;
+
+    border-radius: 6px;
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+html {
+    background: black;
+    height: 100%;
+}
+
+.keys {
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+}
+
+.arr {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    background: black;
+    color: greenyellow;
+    font-size: 50px;
+    border-right: 10px solid #04a804;
+    border-bottom: 10px solid #04a804;
+    border-left: 10px solid #048134;
+    border-top: 10px solid #36dc36;
+    display: inline-block;
+    margin: 5px;
+    transition: all 0.05s linear;
+    user-select: none;
+}
+
+.arr:active {
+    border-bottom: 8px solid #4d4d4d;
+    text-shadow: 0 0 10px white, 0 0 10px white, 0 0 20px white;
+    transform: translate(0, 2px);
+}
+
+.up {
+    position: relative;
+    top: -4px;
+}
+
+.pressed {
+    border-bottom: 8px solid #4d4d4d;
+    text-shadow: 0 0 10px white;
+    transform: translate(0, 2px);
+}
+
+.names {
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white;
+}
+
+.spacer {
+    height: 10px;
+}
+
