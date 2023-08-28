@@ -41,7 +41,7 @@
 
 .head {
     background-color: green;
-
+    animation: pulse 10s ease infinite;
     border-radius: 6px;
     ;
 }
@@ -54,7 +54,7 @@
 
 .food {
     background-color: yellow;
-
+    animation: pulse 1s ease infinite;
     border-radius: 6px;
 }
 
@@ -123,3 +123,16 @@ html {
     height: 10px;
 }
 
+
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
