@@ -1,4 +1,3 @@
-//game constants and variable
 let inputDir = { x: 0, y: 0 };
 const foodSound = new Audio('food.mp3');
 const gameOverSound = new Audio('gameover.mp3');
@@ -10,12 +9,11 @@ let lastPaintTIme = 0;
 let snakeArr = [
     { x: 5, y: 7 }
 ]
+
 food = { x: 14, y: 7 };
 
-//Game function
 function main(ctime) {
     window.requestAnimationFrame(main);
-    //console.log(ctime)
     if ((ctime - lastPaintTIme) / 1000 < 1 / speed) {
         return;
     }
@@ -25,22 +23,17 @@ function main(ctime) {
 }
 
 function isCollide(snake) {
-    // if you bump into yourself
     for (let i = 1; i < snakeArr.length; i++) {
         if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
             return false;
         }
     }
-
-    //if you bump into the wall
     if (snake[0].x >= 19 || snake[0].x <= 0 || snake[0].y >= 19 || snake[0].y <= 0) {
         return true;
     }
-
 }
 
 function gameEngine() {
-    //updating the snake array and food
     if (isCollide(snakeArr)) {
         gameOverSound.play();
         musicSound.pause();
@@ -50,16 +43,9 @@ function gameEngine() {
         musicSound.play();
         score = 0;
     }
-
-    //if you have eaten the food
     if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
         foodSound.play();
         score += 1;
-        // if(score>hiscoreval){
-        //     hiscoreval = score;
-        //     localStorage.setItem("hiscore",JSON.stringify(hiscoreval));
-        //     hiscoreBox.innerHTML = "HiScore: " + hiscoreval;
-        // }
         scoreBox.innerHTML = "score: " + score;
         snakeArr.unshift({ x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y });
         let a = 2;
@@ -67,15 +53,12 @@ function gameEngine() {
         food = { x: Math.round(a + (b - a) * Math.random()), y: Math.round(a + (b - a) * Math.random()) }
     }
 
-    //moving the snake
     for (let i = snakeArr.length - 2; i >= 0; i--) {
         snakeArr[i + 1] = { ...snakeArr[i] };
     }
 
     snakeArr[0].x += inputDir.x;
     snakeArr[0].y += inputDir.y;
-
-    //Display the snake
     board.innerHTML = "";
     snakeArr.forEach((e, index) => {
         snakeElement = document.createElement('div');
@@ -89,32 +72,15 @@ function gameEngine() {
         }
         board.appendChild(snakeElement);
     });
-
-    //Display the food
     foodElement = document.createElement('div');
     foodElement.style.gridRowStart = food.y;
     foodElement.style.gridColumnStart = food.x;
     foodElement.classList.add('food')
     board.appendChild(foodElement);
 }
-
-
-
-//Main logic starts here
-// let hiscore = localStorage.getItem("hiscore");
-// if(hiscore === null){
-//     hiscoreval = 0;
-//     localStorage.setItem("hiscore",JSON.stringify(hiscoreval));
-// }
-// else{
-//     hiscoreval= JSON.parse(hiscore);
-//     hiscoreBox.innerHTML = "HiScore: " + hiscoreval;
-// }
-
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e => {
     inputDir = { x: 0, y: 1 }
-    //moveSound.play();
     switch (e.key) {
         case "ArrowUp":
             console.log("ArrowUp")

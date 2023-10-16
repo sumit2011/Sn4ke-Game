@@ -3,30 +3,27 @@
 
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4X4F5TM8S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-
-
-  
-  gtag('config', 'G-K4X4F5TM8S');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4X4F5TM8S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-K4X4F5TM8S');
+    </script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#333" />
 </head>
 
 <body>
-    <h1 style="text-align:center; color:greenyellow; background-color:black; font-size:40px; padding: 0; margin-bottom: 0; margin: 0; font-family: 'Chivo Mono', monospace;">
+    <h1
+        style="text-align:center; color:greenyellow; background-color:black; font-size:40px; padding: 0; margin-bottom: 0; margin: 0; font-family: 'Chivo Mono', monospace;">
         DE4DLY SN4KE</h1>
     <div class="spacer"></div>
     <div id="scoreBox">score: 0</div>
@@ -56,6 +53,7 @@
         <div class="b"></div>
         <div class="a"></div>
     </div>
+
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <footer
         style="text-align:center; color:greenyellow; background-color:black; font-size:24px; font-family: 'Chivo Mono', monospace; margin: 0%; padding: 0%; bottom: 10px;">
@@ -66,7 +64,7 @@
 
 </body>
 
-<script src="js/index.js"></script>
+<script src="index.js"></script>
 <script>
     var upBtn = document.getElementById("up-btn");
     var leftBtn = document.getElementById("left-btn");
@@ -101,76 +99,4 @@
         inputDir.y = 1;
     });
 </script>
-
 </html>
-
-
-
-
-
-<!-- arrow keys design of codepan -->
-
-<!-- <style>
-    @import url(https://fonts.googleapis.com/css?family=Lato:300);
-
-    html {
-        background: black;
-        height: 100%;
-    }
-
-    .keys {
-        font-family: "Lato", sans-serif;
-        text-align: center;
-        width: 400px;
-        height: 200px;
-        margin: auto;
-    }
-
-    .arr {
-        cursor: pointer;
-        width: 80px;
-        height: 80px;
-        text-align: center;
-        line-height: 80px;
-        background: grey;
-        color: white;
-        font-size: 50px;
-        border-right: 10px solid #4d4d4d;
-        border-bottom: 10px solid #4d4d4d;
-        border-left: 10px solid #5a5a5a;
-        border-top: 10px solid #676767;
-        display: inline-block;
-        margin: 5px;
-        transition: all 0.05s linear;
-        user-select: none;
-    }
-
-    .arr:active {
-        border-bottom: 8px solid #4d4d4d;
-        text-shadow: 0 0 10px white, 0 0 10px white, 0 0 20px white;
-        transform: translate(0, 2px);
-    }
-
-    .up {
-        position: relative;
-        top: -4px;
-    }
-
-    .pressed {
-        border-bottom: 8px solid #4d4d4d;
-        text-shadow: 0 0 10px white;
-        transform: translate(0, 2px);
-    }
-
-    .names {
-        font-size: 18px;
-        font-family: "Lato", sans-serif;
-        text-align: center;
-        color: white;
-        text-shadow: 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white;
-    }
-    .spacer {
-height: 5px;
-}
-   
-</style> -->
